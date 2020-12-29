@@ -1,0 +1,21 @@
+@import '~ngx-toastr/toastr';
+
+.students-form {
+    margin-top: 2rem;
+}
+
+.students-form__field {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.students-form__label {
+    display: inline-block;
+    width: 3.8rem;
+    text-align: right;
+    padding-right: .5rem;
+}
+
+.btn {
+    margin-right: 1rem;
+}

@@ -1,0 +1,18 @@
+@import '~ngx-toastr/toastr';
+
+.students-table {
+    width: 500px;
+    height: 300px;
+}
+
+th, td {
+    border: 1px solid #000;
+}
+tfoot td {
+    text-align: right;
+    font-weight: bold;
+}
+
+.students-table__btn {
+    margin: 0 .5rem;
+}

@@ -1,0 +1,66 @@
+<form [formGroup]="studentForm" novalidate autocomplete="off" class="">
+    <div class="form-group">
+        <label>First Name:
+            <input type="text" class="form-control" formControlName="firstname" placeholder="Enter FirstName"/>
+        </label>
+    </div>
+    <div *ngIf="studentForm.controls['firstname'].invalid && (studentForm.controls['firstname'].dirty || studentForm.controls['firstname'].touched)"
+         class="alert alert-danger">
+
+        <div *ngIf="studentForm.controls['firstname'].errors.required">
+            Name is required.
+        </div>
+        <div *ngIf="studentForm.controls['firstname'].errors.minlength">
+            Name must be at least 4 characters long.
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Last Name:
+        <input type="text" class="form-control" formControlName="lastname" placeholder="Enter LastName"/>
+        </label>
+        <div *ngIf="studentForm.controls['lastname'].invalid && (studentForm.controls['lastname'].dirty || studentForm.controls['lastname'].touched)"
+             class="alert alert-danger">
+
+            <div *ngIf="studentForm.controls['lastname'].errors.required">
+                Name is required.
+            </div>
+            <div *ngIf="studentForm.controls['lastname'].errors.minlength">
+                Name must be at least 4 characters long.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Age:
+        <input type="number" class="form-control" formControlName="age" step="1" min="17" max="69" value="17"/>
+        </label>
+        <div *ngIf="studentForm.controls['age'].invalid && (studentForm.controls['age'].dirty || studentForm.controls['age'].touched)"
+             class="alert alert-danger">
+
+            <div *ngIf="studentForm.controls['age'].errors.required">
+                Age is required.
+            </div>
+            <div *ngIf="studentForm.controls['age'].errors.min || studentForm.controls['age'].errors.max">
+                Age must be from 17 to 69.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Score:
+        <input type="number" class="form-control" formControlName="score" min="0" max="10" value="5"/>
+        </label>
+        <div *ngIf="studentForm.controls['score'].invalid && (studentForm.controls['score'].dirty || studentForm.controls['score'].touched)"
+             class="alert alert-danger">
+
+            <div *ngIf="studentForm.controls['score'].errors.required">
+                Score is required.
+            </div>
+            <div *ngIf="studentForm.controls['score'].errors.min || studentForm.controls['score'].errors.max">
+                Score must be from 0 to 10.
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success" (click)="onSubmit()" [disabled]="studentForm.invalid">Submit</button>
+    <button type="reset" class="btn btn-default" (click)="onCancel()" *ngIf="mode === Mode.Add">Cancel</button>
+</form>
+
+<div id="postResultDiv"></div>

@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "projects": {
+    "StudentsApp": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/StudentsApp",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.json",
+            "aot": true
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "StudentsApp:build"
+          }
+        }
+      },
+      "styles": [
+        "node_modules/ngx-toastr/toastr.css"
+      ]
+    }
+  },
+  "defaultProject": "StudentsApp",
+  "cli": {
+    "analytics": "78844c71-4943-4d8e-8075-de9974be69f0"
+  }
+}

@@ -1,0 +1,26 @@
+<table class="students-table table table-striped table-bordered table-hover" *ngIf="students.length">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Score</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of students">
+        <td>{{student.firstname}}</td>
+        <td>{{student.lastname}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.score}}</td>
+        <td>
+            <button type="button" class="btn btn-success btn-sm students-table__btn" (click)="onDelete(student.id)">Delete</button>
+            <button type="button" class="btn btn-primary btn-sm students-table__btn" (click)="onEdit(student.id)">Edit</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p class="" *ngIf="!students.length">No students available. Please add a student.</p>
+
+<button type="button" class="btn btn-success" (click)="onRegister()">Add Student</button>
